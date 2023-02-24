@@ -5,19 +5,18 @@
 	},
 	"extends": [
 		"plugin:react/recommended",
-		"airbnb",
+		"standard-with-typescript",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended"
 	],
-	"parser": "@typescript-eslint/parser",
+	"overrides": [],
 	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": 12,
-		"sourceType": "module"
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"parser": "@typescript-eslint/parser",
+		"project": "./tsconfig.json"
 	},
-	"plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+	"plugins": ["react", "react-hooks", "prettier"],
 	"rules": {
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
@@ -27,6 +26,9 @@
 				"extensions": [".tsx"]
 			}
 		],
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"react/react-in-jsx-scope": "off",
 		"import/extensions": [
 			"error",
 			"ignorePackages",
@@ -35,9 +37,6 @@
 				"tsx": "never"
 			}
 		],
-		"no-use-before-define": "off",
-		"@typescript-eslint/no-use-before-define": ["error"],
-		"react/react-in-jsx-scope": "off",
 		"prettier/prettier": "error"
 	},
 	"settings": {

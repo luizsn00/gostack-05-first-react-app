@@ -1,9 +1,7 @@
-function App() {
-	return (
-		<div className="App">
-			<h1>Hello world!</h1>
-		</div>
-	);
+import { Router } from './routes';
+
+function App(): JSX.Element {
+	return <Router />;
 }
 
 export default App;
